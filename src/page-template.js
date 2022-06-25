@@ -1,47 +1,73 @@
-// create the about section
-const generateManagerProfile = managerArr => {
+// create the head and body section
+const generateHead = managerArr => {
   if (!managerArr) {
     return '';
   }
 
 
   return `
-    <section class="my-3" id="manager">
-      <p>${managerArr.nom}</p>
-      <h2 class="text-dark bg-primary p-2 display-inline-block">Manager</h2>
-      <div class="flex-row justify-space-between">
+  <head class="my-3" id="about">
+  <h1 class="text-dark bg-primary p-2 display-inline-block">myTeam</h1>
+  </head>
+  `;
+};
+
+// create profiles
+
+const generateManagerProfile = managerArr => {
+  return `
+  <section class="my-3" id="manager">
+    <p>${managerArr.nom}</p>
+    <h2 class="text-dark bg-primary p-2 display-inline-block">Manager</h2>
+    <div class="flex-row justify-space-between">
       ${managerArr
       .filter(({ info }) => info)
       .map(({ nom, id , email, office }) => {
         return `
-          <div class="col=12 mb-2 bg-dark text-light p-3">
-            <h3 class="manager-item-title text-light">${nom}</h3>
-            <h4 class="manager-id text-light">${id}</h4>
-            <h4 class="manager-email text-light">${email}</h4>
-            <h4 class="manager-office text-light">${office}</h4>
+        <div class="col-12 col-md-6 mb-2 bg-dark text-light p-2 flex-column">
+          <h3 class="manager-item-title text-light">${nom}</h3>
+          <h4 class="manager-id text-light">${id}</h4>
+          <h4 class="manager-email text-light">${email}</h4>
+          <h4 class="manager-office text-light">${office}</h4>
           `;
       })
-    .join('')}
+      .join('')}
 
-  ${engineerArr
-    .filter(({ info }) => !info)
-    .map(({ nom, id , email , github }) => {
-      console.log(email);
-      return `
-          <div class="col=12 mb-2 bg-dark text-light p-3">
-            <h3 class="engineer-item-title text-light">${nom}</h3>
+      ${engineerArr
+      .filter(({ info }) => !info)
+      .map(({ nom, id , email , github }) => {
+        console.log(email);
+        return `
+        <div class="col-12 col-md-6 mb-2 bg-dark text-light p-2 flex-column">
+          <h3 class="engineer-item-title text-light">${nom}</h3>
             <h4 class="engineer-id text-light">${id}</h4>
             <h4 class="engineer-email text-light">${email}</h4>
             <h4 class="engineer-office text-light">${github}</h4>
             <a href="${link}" class="btn mt-auto"><i class="fab fa-github mr-2"></i>View GitHub Profile</a>
-          </div>
-          `;
+        </div>
+        `;
       })
-    .join('')}
-    })
-    })}
-    </section>
-    `;
+      .join('')}
+
+      ${internArr
+        .filter(({ info }) => !info)
+        .map(({ nom, id, email, school}) => {
+        console.log(school);
+        return `
+        <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3">
+          <h3 class="intern-item-title text-light">${nom}</h3>
+          <h4 class="intern-id text-light">${id}</h4>
+          <h4 class="intern-email text-light">${email}</h4>
+          <h4 class="intenr-school text-light">${school}</h4>
+        </div>
+        `;
+        })
+        .join('')}
+    
+    </div>
+    
+  </section>
+  `;
 };
 
 // create the projects section
@@ -122,6 +148,7 @@ module.exports = templateData => {
       </div>
     </header>
     <main class="container my-5">
+      ${generateHead()}
       ${generateManagerProfile(about)}
       ${generateProjects(projects)}
     </main>
