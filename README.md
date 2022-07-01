@@ -1,1 +1,1 @@
-# sc_myTeam
+# portfolio-generator_sc
