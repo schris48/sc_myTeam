@@ -215,5 +215,11 @@ function runIndex() {
       createMyTeam();
     });
   }
-  
+  function htmlBuilder() {
+    console.log("myTeam has been created!")
+
+    fs.writeFileSync(distPath.at, generateMyTeam(myTeamArray), "UTF-8")
+  }
+  createMyTeam();
 }
+runIndex();
