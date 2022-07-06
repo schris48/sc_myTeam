@@ -1,5 +1,5 @@
 // require
-const Manager = require('../lib/Manager');
+const Manager = require('../lib/Manager.js');
 
 // test set and get for manager
 test('test setOffice for manager', () => {

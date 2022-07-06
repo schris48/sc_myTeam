@@ -1,5 +1,3 @@
-const Intern = require("../lib/Intern");
-
 // create myteam
 const generateMyTeam = myTeam => {
 

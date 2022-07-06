@@ -1,5 +1,5 @@
 // require
-const Manager = require('../lib/Engineer');
+const Manager = require('../lib/Engineer.js');
 
 // test set and get for engineer
 test('test setGithub for manager', () => {

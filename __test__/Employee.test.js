@@ -1,5 +1,5 @@
 // require
-const Employee = require("../lib/Employee");
+const Employee = require("../lib/Employee.js");
 
 // test create new employee
 test('Test create new employee.', () => {
