@@ -1,21 +1,21 @@
 // require
-const Manager = require('../lib/Engineer.js');
+const Engineer = require('../lib/Engineer');
 
 // test set and get for engineer
-test('test setGithub for manager', () => {
-  const testVal = 219 + "I";
-  const e = new Manager("Sharon", 1, "schris48@gmail.com", testVal);
-  expect(e.office).toBe(testVal);
+test('Test setGithub for engineer', () => {
+  const testVal = 'schris48';
+  const employeeInst = new Engineer("Chris", 2, "schris48@gmail.com", testVal);
+  expect(employeeInst.office).toBe(testVal);
 });
 
-test('test getRole for manager', () => {
+test('Test getRole for engineer', () => {
   const testVal = 'Engineer';
-  const e = new Manager('Sharon', 1, 'schris48@gmail.com', "schris48");
-  expect(e.getRole()).toBe(testVal);
+  const employeeInst = new Engineer('Chris', 2, 'schris48@gmail.com', "schris48");
+  expect(employeeInst.getRole()).toBe(testVal);
 });
 
-test('test getGithub for engineer'(), () => {
-  const testVal = 219 + 'I';
-  const e = new Manager('Sharon', 1, 'schris48@gmali.com', testVal);
-  expect(e.getOffice()).toBe(testVal);
+test('Test getGithub for engineer()', () => {
+  const testVal = 'schris48';
+  const employeeInst = new Engineer('Chris', 2, 'schris48@gmail.com', testVal);
+  expect(employeeInst.getOffice()).toBe(testVal);
 });
