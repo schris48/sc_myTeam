@@ -28,25 +28,25 @@ test('Test email.', () => {
   expect(employeeInst.email).toBe(email);
 })
 
-test('Use getName method.', () => {
+test('Use method getName()', () => {
   const testName = 'Sharon';
   const employeeInst = new Employee(testName);
   expect(employeeInst.getName()).toBe(testName);
 })
 
-test('Use getId method', () => {
+test('Use method getId()', () => {
   const testId = 1;
   const employeeInst = new Employee('Sharon', testId);
   expect(employeeInst.getId()).toBe(testId);
 })
 
-test('Use getEmail method.', () => {
+test('Use method getEmail()', () => {
   const testEmail = 'schris48@gmail.com';
   const employeeInst = new Employee('Sharon', 1, testEmail);
   expect(employeeInst.getEmail()).toBe(testEmail);
 })
 
-test('Use getRole', () => {
+test('Use method getRole()', () => {
   const returnVal = "Employee";
   const employeeInst = new Employee("Sharon", 1, 'schris48@gmail.com');
   expect(employeeInst.getRole()).toBe(returnVal)
