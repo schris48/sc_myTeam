@@ -5,36 +5,52 @@ const fs = require('fs');
 const DIST_DIR = path.resolve(__dirname, "dist");
 const distPath = path.join(DIST_DIR, "myTeam.html");
 const generateMyTeam = require('./src/template.js');
+const Employee = require('./lib/Employee.js');
+const Manager = require('./lib/Manager.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
 
 myTeamArray = [];
 
 function runIndex() {
   function createMyTeam() {
-    inquirer.prompt([{
-      type: 'list',
-      message: 'Choose an employee type to add to your team:',
-      name: 'promptAddEmployee',
-      choices: ['Manager', 'Engineer', 'Intern', 'My team is complete.'],
-    }]).then(function (userInput) {
-      switch(userInput.promptAddEmployee) {
+    inquirer
+    .prompt([
+      {
+        type: 'list',
+        message: 'Choose an employee type to add to your team:',
+        name: 'promptEmployee',
+        choices: ['Manager', 'Engineer', 'Intern', 'My team is complete.'],
+      }
+    ]).then(async function (userInput) {
+      console.log(userInput);
+      switch(userInput.promptEmployee) {
         case 'Manager':
-          addManager();
+          await addManager();
           return;
+
         case 'Engineer':
-          addEngineer();
+          await addEngineer();
           return;
+          
         case 'Intern':
-          addIntern();
+          await addIntern();
+          return;
+
+        case 'My team is complete.':
+          htmlBuilder();
           return;
 
         default:
           htmlBuilder();
+          return;
       }
     })
   }
 
-  function addManager() {
-    inquirer.prompt ([
+  async function addManager() {
+    inquirer
+    .prompt ([
       {
         type: 'input',
         name: 'managerName',
@@ -77,7 +93,7 @@ function runIndex() {
     },
       {
         type: 'input',
-        name: 'managerOfficeInput',
+        name: 'managerOffice',
         message: "Enter the manager's office.",
         validate: managerOfficeInput => {
           if (managerOfficeInput) {
@@ -88,13 +104,16 @@ function runIndex() {
         }
       }
     ]).then(answers => {
-      const manager = new Manager(answers.managerNameInput, answers.managerIdInput, answers.managerEmailInput, answers.managerOfficeInput);
+      const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOffice);
+      console.log(myTeamArray);
       myTeamArray.push(manager);
+      
+      console.log(myTeamArray);
       createMyTeam();
     });
   }
 
-  function addEngineer() {
+  async function addEngineer() {
     inquirer.prompt ([
       {
         type: 'input',
@@ -138,31 +157,31 @@ function runIndex() {
     },
       {
         type: 'input',
-        name: 'engineerGitHubInput',
-        message: "Enter link to engineer's GitHub.",
-        validate: engineerOfficeInput => {
-          if (engineerOfficeInput) {
+        name: 'engineerGithub',
+        message: "Enter engineer's GitHub username.",
+        validate: engineerGithubInput => {
+          if (engineerGithubInput) {
             return true;
           } else {
-            console.log("Please enter a link to the Github account for the engineer!")
+            console.log("Please enter the username for the engineer's Github account!")
           }
         }
       }
     ]).then(answers => {
-      const engineer = new Engineer(answers.engineerNameInput, answers.engineerIdInput, answers.engineerEmailInput, answers.engineerGitHubInput);
+      const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
       myTeamArray.push(engineer);
       createMyTeam();
     });
   }
 
-  function addIntern() {
+  async function addIntern() {
     inquirer.prompt ([
       {
         type: 'input',
         name: 'internName',
         message: "Enter intern's name.",
-        validate: engineerNameInput => {
-          if (engineerNameInput) {
+        validate: internNameInput => {
+          if (internNameInput) {
             return true;
           } else {
             console.log("Please enter the name of the intern!");
@@ -188,8 +207,8 @@ function runIndex() {
         type: 'input',
         name: 'internEmail',
         message: "Enter the intern's e-mail.",
-        validate: engineerEmailInput => {
-          if (engineerEmailInput) {
+        validate: internEmailInput => {
+          if (internEmailInput) {
             return true;
           } else {
             console.log("Please enter the e-mail for the engineer!");
@@ -201,8 +220,8 @@ function runIndex() {
         type: 'input',
         name: 'internSchool',
         message: "Enter intern's school.",
-        validate: internOfficeInput => {
-          if (internOfficeInput) {
+        validate: internSchoolInput => {
+          if (internSchoolInput) {
             return true;
           } else {
             console.log("Please enter the school of the intern!")
@@ -210,7 +229,7 @@ function runIndex() {
         }
       }
     ]).then(answers => {
-      const intern = new Intern(answers.internNameInput, answers.internIdInput, answers.internEmailInput, answers.internSchoolInput);
+      const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
       myTeamArray.push(intern);
       createMyTeam();
     });
@@ -218,7 +237,7 @@ function runIndex() {
   function htmlBuilder() {
     console.log("myTeam has been created!")
 
-    fs.writeFileSync(distPath.at, generateMyTeam(myTeamArray), "UTF-8")
+    fs.writeFileSync(distPath, generateMyTeam(myTeamArray), "UTF-8")
   }
   createMyTeam();
 }

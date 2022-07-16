@@ -7,12 +7,12 @@ const generateMyTeam = myTeam => {
 </div class="card employee-card">
   <div class="card-header bg-primary text-white">
     <h2 class="card-body">
-    <h3 class="card-title">${manager.getName()}</h2>
+    <h3 class="card-title">${manager.getName()}</h3>
   </div>
   <div class="card-body">
-    <ul class=list-group">
+    <ul class="list-group">
       <li class="list-group-item">ID: ${manager.getId()}</li>
-      <li class="list-group-item">Email: <a href="mailto:${manager.getRole()}</h3>
+      <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
       <li class="list-group-item">Office: ${manager.getOffice()}<li>
       </ul>
     </div>
@@ -26,13 +26,13 @@ const generateMyTeam = myTeam => {
 </div class="card employee-card">
   <div class="card-header bg-primary text-white">
     <h2 class="card-body">
-    <h3 class="card-title">${engineer.getName()}</h2>
+    <h3 class="card-title">${engineer.getName()}</h3>
   </div>
   <div class="card-body">
-    <ul class=list-group">
+    <ul class="list-group">
       <li class="list-group-item">ID: ${engineer.getId()}</li>
-      <li class="list-group-item">Email: <a href="mailto:${engineer.getRole()}</h3>
-      <li class="list-group-item">Github: <a href="https:github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a><li>
+      <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+      <li class="list-group-item">Github: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a><li>
       </ul>
     </div>
   </div>
@@ -45,12 +45,12 @@ const generateMyTeam = myTeam => {
 </div class="card employee-card">
   <div class="card-header bg-primary text-white">
     <h2 class="card-body">
-    <h3 class="card-title">${intern.getName()}</h2>
+    <h3 class="card-title">${intern.getName()}</h3>
   </div>
   <div class="card-body">
-    <ul class=list-group">
+    <ul class="list-group">
       <li class="list-group-item">ID: ${intern.getId()}</li>
-      <li class="list-group-item">Email: <a href="mailto:${intern.getRole()}</h3>
+      <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
       <li class="list-group-item">Office: ${intern.getSchool()}<li>
       </ul>
     </div>
@@ -62,7 +62,7 @@ const generateMyTeam = myTeam => {
 
   html.push(myTeam
     .filter(employee => employee.getRole() === "Manager")
-    .map(mnager => generateManager(manager))
+    .map(manager => generateManager(manager))
   );
   html.push(myTeam
     .filter(employee => employee.getRole() === "Engineer")
@@ -88,15 +88,14 @@ module.exports = myTeam => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>myTeam</title>
-    <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    <script src="https://kit.fontawesome.com/c502137733.js"></script>
+    <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   </head>
 
   <body>
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 jumbotron mb-3 team-heading bg-danger">
-          <h1 class=text-cebter text-white">myTeam</h1>
+          <h1 class="text-center text-white">myTeam</h1>
         </div>
       </div>
     </div>
@@ -107,6 +106,7 @@ module.exports = myTeam => {
         </div>
       </div>
     </div>
+    <script src="https://kit.fontawesome.com/c502137733.js"></script>
   </body>
   </html>
   `;
