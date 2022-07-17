@@ -32,7 +32,7 @@
   ## Tests
   1. Open terminal or git bash shell to project level. Install Jest.
   2. Save Jest to dev dependencies.
-  3. In the package.json file, ensure 'test' under the 'scripts' heading is set to: jest
+  3. In the package.json file, ensure 'test' value under the 'scripts' heading is set to: jest
   4. Run 'npm test' to see test results.
   
   ### Questions
