@@ -16,8 +16,7 @@
   ## Installation
   1. Clone GitHub repository to local storage. 
   2. At project level, initialize NPM and install inquirer.
-  3. Save  In the package.json file
-  4. Open terminal or git bash shell to the project level and enter 'node index' to start.
+  3. Open terminal or git bash shell to the project level and enter 'node index' to start.
 
   ## Usage
   myTeam is a professional dynamic team generator perfect for your web development company and scalable to all your growth needs!
