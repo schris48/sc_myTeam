@@ -22,7 +22,6 @@ function runIndex() {
         choices: ['Manager', 'Engineer', 'Intern', 'My team is complete.'],
       }
     ]).then(async function (userInput) {
-      console.log(userInput);
       switch(userInput.promptEmployee) {
         case 'Manager':
           await addManager();
@@ -104,10 +103,7 @@ function runIndex() {
       }
     ]).then(answers => {
       const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOffice);
-      console.log(myTeamArray);
       myTeamArray.push(manager);
-      
-      console.log(myTeamArray);
       createMyTeam();
     });
   }
