@@ -5,7 +5,6 @@ const fs = require('fs');
 const DIST_DIR = path.resolve(__dirname, "dist");
 const distPath = path.join(DIST_DIR, "myTeam.html");
 const generateMyTeam = require('./src/template.js');
-const Employee = require('./lib/Employee.js');
 const Manager = require('./lib/Manager.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');

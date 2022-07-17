@@ -4,7 +4,7 @@ const generateMyTeam = myTeam => {
 // manager html
   const generateManager = manager => {
     return `
-</div class="card employee-card">
+<div class="card employee-card">
   <div class="card-header bg-primary text-white">
     <h2 class="card-body">
     <h3 class="card-title">${manager.getName()}</h3>
@@ -14,16 +14,16 @@ const generateMyTeam = myTeam => {
       <li class="list-group-item">ID: ${manager.getId()}</li>
       <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
       <li class="list-group-item">Office: ${manager.getOffice()}<li>
-      </ul>
-    </div>
+    </ul>
   </div>
+</div>
     `;
   };
 
 // engineer html
   const generateEngineer = engineer => {
     return `
-</div class="card employee-card">
+<div class="card employee-card">
   <div class="card-header bg-primary text-white">
     <h2 class="card-body">
     <h3 class="card-title">${engineer.getName()}</h3>
@@ -32,17 +32,17 @@ const generateMyTeam = myTeam => {
     <ul class="list-group">
       <li class="list-group-item">ID: ${engineer.getId()}</li>
       <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-      <li class="list-group-item">Github: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a><li>
-      </ul>
-    </div>
+      <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a><li>
+    </ul>
   </div>
+</div>
     `;
   };
 
 // intern html
   const generateIntern = intern => {
     return `
-</div class="card employee-card">
+<div class="card employee-card">
   <div class="card-header bg-primary text-white">
     <h2 class="card-body">
     <h3 class="card-title">${intern.getName()}</h3>
@@ -52,9 +52,9 @@ const generateMyTeam = myTeam => {
       <li class="list-group-item">ID: ${intern.getId()}</li>
       <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
       <li class="list-group-item">Office: ${intern.getSchool()}<li>
-      </ul>
-    </div>
+    </ul>
   </div>
+</div>
     `;
   };
 

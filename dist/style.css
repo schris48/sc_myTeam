@@ -1,3 +1,4 @@
+
 .jumbotron {
     border-radius: 0;
 }
@@ -5,9 +6,14 @@
 .employee-card {
     box-shadow: 5px 5px 5px gray;
     margin: 1rem;
+    list-style: none;
     border: none;
 }
 
 .card-body {
     background-color: rgb(240, 240, 240);
+}
+
+.list-group-item {
+  list-style: none;
 }
