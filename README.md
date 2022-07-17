@@ -31,12 +31,12 @@
 
   ## Tests
   1. Open terminal or git bash shell to project level. Install Jest.
-  2. Save Jest to dev dependencies. Run 'npm test' to run test scripts using Jest.
+  2. Save Jest to dev dependencies.
   3. In the package.json file, ensure 'test' under the 'scripts' heading is set to: jest
-  4. Run 'node test' to see test results.
+  4. Run 'npm test' to see test results.
   
   ### Questions
-  For inquiries please reach out to me on Github or contact me via email:
-  - Github: schris48
+  For inquiries please reach out to me on GitHub or contact me via email:
+  - GitHub: schris48
   - Email: sharonchristensen@live.com
   
