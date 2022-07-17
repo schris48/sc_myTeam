@@ -26,7 +26,8 @@
   ![license](https://img.shields.io/badge/license-MIT-blueviolet.png)
 
   ## Credits
-  Mila Decker's example of a dynamic team generator, https://github.com/deckiedevs. James Jenk's example of a dynamic team generator, https://github.com/JamesLJenks.
+  1. Mila Decker's example of a dynamic team generator, https://github.com/deckiedevs.
+  2. James Jenk's example of a dynamic team generator, https://github.com/JamesLJenks.
 
   ## Tests
   1. Open terminal or git bash shell to project level. Install Jest.
