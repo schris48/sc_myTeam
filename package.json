@@ -1,21 +1,21 @@
 {
-  "name": "portfolio-generator_sc",
+  "name": "my-team_sc",
   "version": "1.0.0",
-  "description": "Generate a portfolio!",
+  "description": "Dynamically generate team profiles!",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/schris48/portfolio-generator_sc.git"
+    "url": "git+https://github.com/schris48/sc_myTeam.git"
   },
   "author": "schris48",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/schris48/portfolio-generator_sc/issues"
+    "url": "https://github.com/schris48/sc_myTeam/issues"
   },
-  "homepage": "https://github.com/schris48/portfolio-generator_sc#readme",
+  "homepage": "https://github.com/schris48/sc_myTeam#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
   },
